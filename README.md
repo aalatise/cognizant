@@ -19,8 +19,12 @@ Now, in the Postman app, enter the target URL as illustrated below for various R
 set the request method accordingly and set request object (i.e JSON object ) press the Send button
 
 SELECT	READ	http://localhost:8080/company/rest/emp/E1236
+
 SELECT ALL	READ	http://localhost:8080/company/rest/emp/all
+
 INSERT	CREATE	http://localhost:8080/company/rest/emp/add/E111
+
 UPDATE	UPDATE	http://localhost:8080/company/rest/emp/update/E111/name=alfred&salary=100000
+
 DELETE	DELETE	http://localhost:8080/company/rest/emp/delete/E111
 
