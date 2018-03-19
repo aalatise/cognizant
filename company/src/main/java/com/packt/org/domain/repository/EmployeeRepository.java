@@ -16,16 +16,16 @@ public interface EmployeeRepository {
 //	List<Employee> getEmployeesByCategory(String category);
 //	List<Employee> getEmployeesByFilter(Map<String,List<String>> filterParams);
 	
-	void updateSalary(String productId, long salary);
 	public void updateActiveFalse(String employeeId);
 	List <Employee> getAllEmployees();
 	Employee getEmployeeById(String employeeID);
-	public void addEmployee(Employee employee); 
-	public void removeEmployee(String employeeID);
+	
 	
 	// define rest methods
-	Employee read(String id);
-	void updateSalary(EmployeeDto employeeDto);
-	void create(EmployeeDto employeeDto);
+	public Employee read(String id);
+	public void updateEmployee(EmployeeDto employeeDto);
+	public void addEmployee(Employee employee); 
+	public void removeEmployee(String employeeID);
+
 	
 }

@@ -62,10 +62,10 @@ public class EmployeeRestController {
 	 @RequestMapping(value = "/update/{employeeId}", method = RequestMethod.PUT)
 	 @ResponseStatus(value = HttpStatus.OK)
 	   public void update(@PathVariable(value = "employeeId") String employeeId,
-										   @RequestParam(value= "salary", required = false) long salary,
-										   @RequestParam("name") String name,
+			   							   @RequestParam(value="name", required = false) String name,
+										   @RequestParam(value= "salary", required = false) Long salary,
 										   @RequestParam(value="description", required = false) String description,
-										   @RequestParam(value="inactive", required = false) boolean inactive,
+										   @RequestParam(value="inactive", required = false) Boolean inactive,
 										   @RequestBody EmployeeDto employeeDto) {
 		 employeeDto.setId(employeeId);
 		 employeeDto.setSalary(salary);
@@ -73,7 +73,7 @@ public class EmployeeRestController {
 		 employeeDto.setDescription(description);
 		 employeeDto.setInactive(inactive);
 		
-		 employeeRepository.updateSalary(employeeDto);
+		 employeeRepository.updateEmployee(employeeDto);
 	 }
 	 
    @RequestMapping(value = "/delete/{employeeId}", method = RequestMethod.DELETE)

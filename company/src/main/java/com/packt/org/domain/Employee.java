@@ -10,20 +10,20 @@ public class Employee implements Serializable {
 	private String employeeId;
 	private String name;
 	private String description;
-	private long salary; 
-	private boolean inactive; 
+	private Long salary; 
+	private Boolean inactive; 
 
 	public Employee() {
 		super();
 	}
 
-	public Employee(String employeeId, String name, long salary) {
+	public Employee(String employeeId, String name, Long salary) {
 		this.employeeId = employeeId;
 		this.name = name;
 		this.salary = salary;
 	}
 	
-	public Employee(String employeeId, String name, String description, long salary,boolean inactive) {
+	public Employee(String employeeId, String name, String description, Long salary,Boolean inactive) {
 		this.employeeId = employeeId;
 		this.name = name;
 		this.description=description;
@@ -31,19 +31,19 @@ public class Employee implements Serializable {
 		this.inactive=inactive;
 	}
 	
-	public boolean getInactive() {
+	public Boolean getInactive() {
 		return inactive;
 	}
 
-	public void setInactive(boolean inactive) {
+	public void setInactive(Boolean inactive) {
 		this.inactive = inactive;
 	}
 	
-	public long getSalary() {
+	public Long getSalary() {
 		return salary;
 	}
 
-	public void setSalary(long salary) {
+	public void setSalary(Long salary) {
 		this.salary = salary;
 	}
 	

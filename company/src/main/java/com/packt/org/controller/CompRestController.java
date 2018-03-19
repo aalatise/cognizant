@@ -24,11 +24,11 @@ public class CompRestController {
    @Autowired
    private CompService compService;
    
-   @RequestMapping(method = RequestMethod.POST)
-   @ResponseStatus(value = HttpStatus.CREATED)
-   public void create(@RequestBody CompDto compDto) {
-      compService.create(compDto);
-   }
+//   @RequestMapping(method = RequestMethod.POST)
+//   @ResponseStatus(value = HttpStatus.CREATED)
+//   public void create(@RequestBody CompDto compDto) {
+//      compService.create(compDto);
+//   }
 
    @RequestMapping(value = "/{compId}", method = RequestMethod.GET)
    public Comp read(@PathVariable(value = "compId") String compId) {

@@ -24,16 +24,14 @@ public class EmployeeServiceImpl implements EmployeeService{
       return employeeRepository.read(id);
    }
    
-   public void create(EmployeeDto employeeDto) {
-	   employeeRepository.create(employeeDto);
-   }
+
    
    @Override
    public void updateAllEmployees() {
 	   List <Employee> allEmployees = employeeRepository.getAllEmployees();
 	   for(Employee employee : allEmployees) {
-         if(employee.getInactive())
-            employeeRepository.updateSalary(employee.getEmployeeId(), 0);
+//         if(employee.getInactive())
+//            employeeRepository.updateSalary(employee.getEmployeeId(), 0);
       }
    }
    

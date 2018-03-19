@@ -4,7 +4,6 @@ import com.packt.org.dto.CompDto;
 
 public interface CompService {
    
-   void create(CompDto compDto);
    
    Comp read(String compId);
    

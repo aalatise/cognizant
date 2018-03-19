@@ -10,19 +10,19 @@ public class EmployeeDto implements Serializable{
    private static final long serialVersionUID = -2018182726290898588L;
 
    private String id;
-   private long salary; 
+   private Long salary; 
 	private String name;
 	private String description;
-	private boolean inactive; 
+	private Boolean inactive; 
 	
    public EmployeeDto() {}
 
-   public EmployeeDto(String id, long salary) {
+   public EmployeeDto(String id, Long salary) {
       this.id = id;
       this.salary = salary;
    }
 
-   public EmployeeDto(String employeeId, String name, String description, long salary,boolean inactive) {
+   public EmployeeDto(String employeeId, String name, String description, Long salary,Boolean inactive) {
 		this.id = employeeId;
 		this.name = name;
 		this.description=description;
@@ -42,7 +42,7 @@ public class EmployeeDto implements Serializable{
 		return salary;
 	}
 
-	public void setSalary(long salary) {
+	public void setSalary(Long salary) {
 		this.salary = salary;
 	}
 	
@@ -66,7 +66,7 @@ public class EmployeeDto implements Serializable{
 		return inactive;
 	}
 
-	public void setInactive(boolean inactive) {
+	public void setInactive(Boolean inactive) {
 		this.inactive = inactive;
 	}
  }

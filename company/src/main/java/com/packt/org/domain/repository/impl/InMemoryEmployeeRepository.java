@@ -23,7 +23,7 @@ import com.packt.org.dto.EmployeeDto;
 import com.packt.org.exception.EmployeeNotFoundException;
 
 @Repository
-public class InMemoryEmployeeRepository implements EmployeeRepository{
+public class  InMemoryEmployeeRepository implements EmployeeRepository{
   
    @Autowired
    private NamedParameterJdbcTemplate jdbcTemplate;
@@ -42,10 +42,8 @@ public class InMemoryEmployeeRepository implements EmployeeRepository{
         return result;
    }
 
-   @Override
-   public void create(EmployeeDto employeeDto) {
-	   
-   }
+   
+
 
    private static final class EmployeeMapper implements RowMapper<Employee> {
 	      public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -59,16 +57,22 @@ public class InMemoryEmployeeRepository implements EmployeeRepository{
 	      }
    }
 
-
-   public void updateSalary(EmployeeDto employeeDto) { 
-	   updateSalary(employeeDto.getId(), employeeDto.getSalary());
+   @Override
+   public void updateEmployee(EmployeeDto employeeDto) { 
+	   updateEmployee(employeeDto.getId(), employeeDto.getSalary(),employeeDto.getName(),
+			   employeeDto.getDescription(),employeeDto.getInactive());
    }
    
-   @Override
-   public void updateSalary(String employeeId, long salary) { 
-      String SQL = "UPDATE EMPLOYEES SET SALARY = :salary WHERE ID = :id"; 
+   
+   public void updateEmployee(String employeeId, Long salary
+		   ,String name,
+		   String description,Boolean inactive) { 
+      String SQL = "UPDATE EMPLOYEES SET SALARY = :salary, NAME = :name, DESCRIPTION = :description, INACTIVE = :inactive WHERE ID = :id"; 
       Map<String, Object> params = new HashMap<>();
       params.put("salary", salary); 
+      params.put("name", name);
+      params.put("description", description);
+      params.put("inactive", inactive);
       params.put("id", employeeId); 
      
       jdbcTemplate.update(SQL, params); 
@@ -135,4 +139,5 @@ public class InMemoryEmployeeRepository implements EmployeeRepository{
             System.out.println("No Employee found with ID " + employeeID);
         }
    }
+
 }

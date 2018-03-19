@@ -21,7 +21,7 @@ public interface EmployeeService {
 	
 	//Rest service
 	Employee read(String employeeID);
-	void create(EmployeeDto employeeDto);
+
 	
 //	List<Employee> getAllProducts();
 //	List<Employee> getProductsByCategory(String category);
